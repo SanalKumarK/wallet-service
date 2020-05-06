@@ -9,6 +9,118 @@ Database used is in memory db h2.
 Below object model is used to design the schema for wallet-service.
 ![](utils/Object_Modelling.PNG)
 
+Following API end points are avaialbe in the service.
+* Create a Player.
+   * URL: /player
+   * Method: POST
+   * Content-Type: application/json
+   * Data : Player
+   * Player Schema   
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "playerId": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },   
+    "status": {
+      "type": "string",
+      "enum": ["ACTIVE", "SUSPENDED", "ARCHIVED"]
+    },    
+    "age": {
+      "type": "integer"
+    },
+    "account": {
+      "type": "object",
+      "properties": {
+        "accountNumber": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "accountNumber",
+        "balance",
+        "currency"
+      ]
+    }
+  },
+  "required": [
+    "playerId",
+    "firstName",
+    "lastName",
+    "age",
+    "account"
+  ]
+}
+```
+----
+* Check the balance of a player
+   * URL: /player
+   * Parameters: id (player id)
+   * Method: GET     
+   * Result: Balance info in String.
+----
+* Create a transaction
+   * URL: /wallet/transaction
+   * Method: POST
+   * Content-Type: application/json
+   * Data : Transaction   
+   * Transaction Schema
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "transactionId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["CREDIT", "DEBIT"]
+    },
+    "accountNumber": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "transactionId",
+    "type",
+    "accountNumber",
+    "date",
+    "amount"
+  ]
+}
+```
+----   
+* Check the transaction history of a player
+   * URL: /wallet/transaction
+   * Method: GET
+   * Parameters:
+      * id
+      * start (ISO_DATE_TIME format)
+      * end (ISO_DATE_TIME format)
+   * Result : List of Transactions
+----
+
 ##### Java Docs are available in the _wallet-service/doc/index.html_. 
 
 ##### To run the service please follow the below steps. 
