@@ -1,0 +1,196 @@
+{
+	"id": "33515039-7a4a-3257-98bc-9295efe9c096",
+	"name": "wallet-service",
+	"description": "",
+	"order": [
+		"b2d7a1a1-ced6-5331-4e22-57a75ac74a81",
+		"dde49868-eb4e-f60b-3bd3-feb5524b8fe3",
+		"0142ad9c-7e0d-ab53-6dd3-369898ea43be",
+		"26e82286-408f-a3b4-1bf7-d3c1ac3b38e8",
+		"d3a40f72-b536-3065-fe2a-96873aa1ce91"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1588276007165,
+	"owner": "1897285",
+	"public": false,
+	"requests": [
+		{
+			"id": "0142ad9c-7e0d-ab53-6dd3-369898ea43be",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/wallet/balance?id=sanal.kumar",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "sanal.kumar",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "33515039-7a4a-3257-98bc-9295efe9c096",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8080/wallet/balance?id=sanal.kumar",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1588749941537,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"type\": \"DEBIT\",\n    \"playerId\": \"1\",\n    \"amount\": 10000,\n    \"date\": \"2020-05-01T20:51:44.227+0000\"\n}"
+		},
+		{
+			"id": "26e82286-408f-a3b4-1bf7-d3c1ac3b38e8",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/wallet/transaction",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "33515039-7a4a-3257-98bc-9295efe9c096",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8080/wallet/transaction",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1588749954504,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"transactionId\":\"1\",\n\t\"type\": \"CREDIT\",\n\t\"accountNumber\":\"123456789\",\n    \"date\": \"2020-05-02T13:40:00.343+0000\",\n    \"amount\": 300\n}\n"
+		},
+		{
+			"id": "b2d7a1a1-ced6-5331-4e22-57a75ac74a81",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/player",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "33515039-7a4a-3257-98bc-9295efe9c096",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8080/player",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1588749913191,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"playerId\": \"sanal.kumar\",\n\t\"firstName\": \"sanal\",\n    \"lastName\": \"kurunnan\",\n    \"age\": 30,\n    \"account\": {\n    \t\"accountNumber\": \"123456789\",\n    \t\"balance\": \"1000\",\n    \t\"currency\":\"USD\"\n    }\n}\n"
+		},
+		{
+			"id": "d3a40f72-b536-3065-fe2a-96873aa1ce91",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/wallet/transaction?id=sanal.kumar&start=2020-05-02T13:40:00Z&end=2020-05-05T21:41:54Z",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "sanal.kumar",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "start",
+					"value": "2020-05-02T13:40:00Z",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "end",
+					"value": "2020-05-05T21:41:54Z",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "33515039-7a4a-3257-98bc-9295efe9c096",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8080/wallet/transaction?id=sanal.kumar&start=2020-05-02T13:40:00Z&end=2020-05-05T21:41:54Z",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1588749966710,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "dde49868-eb4e-f60b-3bd3-feb5524b8fe3",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/player?id=sanal.kumar",
+			"queryParams": [
+				{
+					"key": "id",
+					"value": "sanal.kumar",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "33515039-7a4a-3257-98bc-9295efe9c096",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8080/player?id=sanal.kumar",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1588749929155,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
