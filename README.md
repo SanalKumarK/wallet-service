@@ -124,6 +124,8 @@ Following API end points are avaialbe in the service.
 ##### Java Docs are available in the _wallet-service/doc/index.html_. 
 
 ##### To run the service please follow the below steps. 
+_Requirements : Java 11_
+  
 1) [Download the zip](https://github.com/SanalKumarK/wallet-service/archive/master.zip)
 2) Unzip the downloaded file.
 3) Navigate to the _wallet-service-master/_ folder
