@@ -1,0 +1,6 @@
+com.leovegas.wallet
+com.leovegas.wallet.api
+com.leovegas.wallet.api.entities
+com.leovegas.wallet.repository
+com.leovegas.wallet.repository.entities
+com.leovegas.wallet.service

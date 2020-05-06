@@ -1,25 +1,26 @@
-package com.leovegas.wallet.entities;
+package com.leovegas.wallet.repository.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Player {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
+    private String playerId;
     private String firstName;
     private String lastName;
     private Integer age;
-    private BigDecimal balance;
     private PlayerStatusType status;
+    @OneToOne
+    private Account account;
 
-    public long getId() {
-        return id;
+    public String getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(String playerId) {
+        this.playerId = playerId;
     }
 
     public String getFirstName() {
@@ -46,19 +47,19 @@ public class Player {
         this.age = age;
     }
 
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
-
     public PlayerStatusType getStatus() {
         return status;
     }
 
     public void setStatus(PlayerStatusType status) {
         this.status = status;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }
